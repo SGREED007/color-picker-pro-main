@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker Pro</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                
+                <h1>Color Picker Pro</h1>
+            </div>
+        </div>
+
+        <!-- Main Action Button -->
+        <div class="main-action">
+            <button id="pickColorBtn" class="pick-btn">
+                
+                    <path d="M20 14c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" fill="currentColor"/>
+                    <path d="M20 2c1.1 0 2-.9 2-2s-.9 2-2 2-2-.9-2 2 .9-2 2-2z" fill="currentColor"/>
+                    <path d="M8 20c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z" fill="currentColor"/>
+                    <path d="M3.9 12c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z" fill="currentColor"/>
+                </svg>
+                Pick Color from Screen
+            </button>
+        </div>
+
+        <!-- Current Color Display -->
+        <div id="colorDisplay" class="color-display" style="display: none;">
+            <div class="color-info">
+                <div id="colorPreview" class="color-preview"></div>
+                <div class="color-values">
+                    <div class="color-value">
+                        <label>HEX</label>
+                        <div class="value-container">
+                            <input type="text" id="hexValue" readonly>
+                            <button class="copy-btn" data-format="hex">Copy</button>
+                        </div>
+                    </div>
+                    <div class="color-value">
+                        <label>RGB</label>
+                        <div class="value-container">
+                            <input type="text" id="rgbValue" readonly>
+                            <button class="copy-btn" data-format="rgb">Copy</button>
+                        </div>
+                    </div>
+                    <div class="color-value">
+                        <label>HSL</label>
+                        <div class="value-container">
+                            <input type="text" id="hslValue" readonly>
+                            <button class="copy-btn" data-format="hsl">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color History -->
+        <div class="history-section">
+            <div class="history-header">
+                <h3>Recent Colors</h3>
+                <button id="clearHistoryBtn" class="delete-btn" title="Clear History" aria-label="Clear History">
+  <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </svg>
+</button>
+
+            </div>
+            <div id="colorHistory" class="color-history">
+                <!-- History items will be populated here -->
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div id="statusMessage" class="status-message" style="display: none;"></div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Click any color to copy HEX value</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

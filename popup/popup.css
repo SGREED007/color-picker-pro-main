@@ -1,0 +1,400 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 320px;
+    min-height: 400px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+.container {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4F46E5;
+    margin: 0;
+}
+
+/* Main Action Button */
+.main-action {
+    display: flex;
+    justify-content: center;
+}
+
+.pick-btn {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    min-width: 200px;
+    justify-content: center;
+}
+
+.pick-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+    background: linear-gradient(135deg, #5B50E8 0%, #8B47F0 100%);
+}
+
+.pick-btn:active {
+    transform: translateY(0);
+}
+
+.pick-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Color Display Section */
+.color-display {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.color-info {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.color-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    flex-shrink: 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-values {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.color-value {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.color-value label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.value-container {
+    display: flex;
+    gap: 6px;
+}
+
+.value-container input {
+    flex: 1;
+    padding: 6px 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: monospace;
+    background: #f8fafc;
+    color: #374151;
+}
+
+.value-container input:focus {
+    outline: none;
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.copy-btn {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.copy-btn:hover {
+    background: #4338CA;
+    transform: translateY(-1px);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-btn.copied {
+    background: #10B981;
+    transform: scale(0.95);
+}
+
+/* History Section */
+.history-section {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.history-header h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+}
+
+/* Permanent red delete button with accessible shades */
+.delete-btn {
+  background: #EF4444;            /* base red-500 */
+  color: #FFFFFF;                 /* white icon/stroke */
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0; 
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);                /* tight box around icon */
+  transition: background .15s ease, transform .05s ease, box-shadow .15s ease;
+}
+
+.delete-btn svg { display: block; }
+.delete-btn svg path { stroke: currentColor; }
+
+/* Hover: slightly darker red for clear feedback */
+.delete-btn:hover {
+  background: #DC2626;    
+  box-shadow: 0 2px 6px rgba(220,38,38,0.18);        /* red-600 */
+}
+
+/* Active: darker press state */
+.delete-btn:active {
+  background: #B91C1C;            /* red-700 */
+  transform: scale(0.98);
+}
+
+/* Disabled (if you ever disable it) */
+.delete-btn:disabled {
+  background: #FCA5A5;            /* red-300 */
+  color: #FFFFFF;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Focus-visible for keyboard users */
+.delete-btn:focus-visible {
+  outline: 2px solid #FCA5A5;     /* red-300 focus ring */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+
+.color-history {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+    gap: 8px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.color-history:empty::after {
+    content: "No colors picked yet";
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+    padding: 20px;
+    font-style: italic;
+}
+
+.history-item {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 2px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.history-item:hover {
+    transform: scale(1.1);
+    border-color: #4F46E5;
+    z-index: 10;
+}
+
+.history-item::after {
+    content: attr(data-color);
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    font-family: monospace;
+}
+
+.history-item:hover::after {
+    opacity: 1;
+}
+
+/* Status Messages */
+.status-message {
+    background: #10B981;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    animation: slideIn 0.3s ease;
+}
+
+.status-message.error {
+    background: #EF4444;
+}
+
+.status-message.info {
+    background: #3B82F6;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer p {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Scrollbar Styles */
+.color-history::-webkit-scrollbar {
+    width: 4px;
+}
+
+.color-history::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 2px;
+}
+
+.color-history::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.color-history::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Loading Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pick-btn.loading svg {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 320px) {
+    body {
+        width: 280px;
+    }
+    
+    .container {
+        padding: 12px;
+    }
+    
+    .color-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .color-preview {
+        width: 100%;
+        height: 40px;
+    }
+}
