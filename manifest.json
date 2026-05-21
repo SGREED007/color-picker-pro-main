@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Color Picker Pro - Fast Color Picker",
+  "version": "1.0.0",
+  "description": "Lightning-fast color picker and eyedropper tool. Pick colors from any website instantly with HEX, RGB, and HSL support.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Pick Colors",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "host_permissions": []
+}
